@@ -23,8 +23,8 @@ venv*/
 *.bat
 *.bkp
 *.drawio
-notebooks
-scripts
+notebooks/
+scripts/
 
 # =========================================
 # IDE & Editor
