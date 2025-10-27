@@ -19,6 +19,9 @@ venv/
 venv*/
 *.env
 *.secret
+*.bat
+*.bkp
+*.drawio
 
 # =========================================
 # IDE & Editor
