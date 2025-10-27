@@ -1,0 +1,23 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+<a href="{{ url('daftar_tugas', kwargs={'id_matakuliah': tugas.matakuliah.id})}}">kembali</a>
+<p>detail tugas</p>
+
+<p>kirim tugas </p>
+<p>{{ tugas.judul }}</p>
+<p>deadline {{ tugas.deadline.strftime("%d-%m-%Y") }}</p>
+{% if tugas.deadline < timezone.now().date() %}
+    <p>tanggal pengumpulan sudah lewat</p>
+{% else %}
+<form action="" method="post">
+    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+    <input type="text" name="nim" id="nim" placeholder="nim">
+    <input type="url" name="link_tugas" id="link_tugas" placeholder="link tugas">
+    <!-- validasi batas pengiriman -->
+    
+    <button type="submit">Kirim</button>
+</form>
+{% endif %}
+{% for message in get_messages(request) %}<p> <strong>{{ message.tags }}</strong> {{ message }}</p>{% endfor %}
+
+{% endblock %}

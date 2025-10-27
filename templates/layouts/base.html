@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myapp</title>
+    {% block styles %} {% endblock %}
+</head>
+<body>
+    {% include 'partials/sidebar.html' %}
+    {% block content %} {% endblock %}
+    {% block scripts %} {% endblock %}
+</body>
+</html>

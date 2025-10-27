@@ -1,0 +1,53 @@
+# =========================================
+# Django
+# =========================================
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+media/
+staticfiles/
+
+# =========================================
+# Environments & Config
+# =========================================
+.env
+.env.local
+.env.*
+venv/
+venv*/
+*.env
+*.secret
+
+# =========================================
+# IDE & Editor
+# =========================================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# =========================================
+# OS generated files
+# =========================================
+.DS_Store
+Thumbs.db
+
+# =========================================
+# PyInstaller
+# =========================================
+*.manifest
+*.spec
+
+# =========================================
+# Unit test / coverage reports
+# =========================================
+.coverage
+.tox/
+nosetests.xml
+coverage.xml
+htmlcov/
+
+credentials/
+*.json

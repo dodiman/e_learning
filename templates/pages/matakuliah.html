@@ -1,0 +1,31 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+<h1>Matakuliah</h1>
+<p>daftar matakuliah</p>
+
+<p>tabel dengan paginasi</p>
+
+<div>
+    {% import "components/tabel.html" as ui_tabel %}
+    {{ ui_tabel.tabel_dengan_paginasi(page_obj, headers, skip_id=True, url_name="matakuliah_detail") }}
+   
+</div>
+
+
+<div style="display: flex; flex-direction: column;">
+
+    {% for matakuliah in list_matakuliah %}
+    <div style="display: flex; flex-direction: row; gap: 10px;">
+
+       
+        <p>{{ matakuliah.id }}</p>
+        <p>{{ matakuliah.kode }}</p>
+        <p>{{ matakuliah.nama }}</p>
+        <a href="{{ url('matakuliah_detail', kwargs={'id': matakuliah.id}) }}">detail</a>
+        
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

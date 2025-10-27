@@ -1,0 +1,8 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+<a href="{{ url('matakuliah') }}">kembali</a>
+<h1>{{ matakuliah.nama }}</h1>
+<a href="">Materi</a>
+<a href="{{ url('kirim_tugas', kwargs={'id_matakuliah': matakuliah.id}) }}">Kirim Tugas</a>
+<a href="{{ url('daftar_tugas', kwargs={'id_matakuliah': matakuliah.id})}}">daftar tugas</a>
+{% endblock %}

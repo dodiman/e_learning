@@ -1,0 +1,72 @@
+{% macro table(headers, rows) %}
+<table border="1" cellspacing="0" cellpadding="6">
+  <thead style="background-color: #f2f2f2;">
+    <tr>
+      {% for header in headers %}
+        <th>{{ header }}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in rows %}
+      <tr>
+        {% for cell in row %}
+          <td>{{ cell }}</td>
+        {% endfor %}
+      </tr>
+    {% else %}
+      <tr><td colspan="{{ headers|length }}" style="text-align:center;">Tidak ada data</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endmacro %}
+
+{% macro tabel_dengan_paginasi(page_obj, headers, skip_id=False, url_name=None) %}
+<table border="1" cellpadding="8">
+  <thead>
+    <tr>
+      {% for header in headers %}
+        {% if skip_id and header == "id" %}
+          {% continue %}
+        {% endif %}
+        <th>{{ header }}</th>
+      {% endfor %}
+      <td>#</td>
+    </tr>
+  </thead>
+  <tbody>
+    {% for obj in page_obj %}
+      <tr>
+        {% for header in headers %}
+          {% if skip_id and header == "id" %}
+            {% continue %}
+          {% endif %}
+          <td>{{ obj[header] }}</td>
+        {% endfor %}
+        <td>
+          {% if url_name is not none %}
+          <a href="{{ url(url_name, kwargs={'id': obj.id}) }}">detail</a>
+          {% endif %}
+        </td>
+      </tr>
+    {% else %}
+      <tr><td colspan="3">Tidak ada data</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<!-- Navigasi halaman -->
+<div class="pagination">
+  {% if page_obj.has_previous() %}
+    <a href="?page=1">&laquo; pertama</a>
+    <a href="?page={{ page_obj.previous_page_number() }}">sebelumnya</a>
+  {% endif %}
+
+  <span>Halaman {{ page_obj.number }} dari {{ page_obj.paginator.num_pages }}</span>
+
+  {% if page_obj.has_next() %}
+    <a href="?page={{ page_obj.next_page_number() }}">selanjutnya</a>
+    <a href="?page={{ page_obj.paginator.num_pages }}">terakhir &raquo;</a>
+  {% endif %}
+</div>
+{% endmacro %}

@@ -1,0 +1,48 @@
+{% extends "layouts/base.html" %} {% block content %}
+<a href="{{ url('matakuliah_detail', kwargs={'id': matakuliah.id}) }}"
+  >kembali</a
+>
+
+<h1>Daftar Tugas <span>{{ matakuliah.nama }}</span></h1>
+
+<div>
+  {% import "components/card.html" as ui_card %}
+  {{ ui_card.cardlist(page_obj, csrf_token, url_pencarian=url_pencarian) }}
+</div>
+
+<div>
+    {% import "components/tabel.html" as ui_tabel %}
+    {{ ui_tabel.tabel_dengan_paginasi(page_obj, headers, skip_id=True, url_name="tugas_detail") }}
+   
+</div>
+
+<div>
+  <table>
+    <tr>
+      <th>id</th>
+      <th>judul</th>
+      <th>deskripsi</th>
+      <th>deadline</th>
+      <th>#</th>
+    </tr>
+    {% for tugas in list_tugas %}
+    <tr>
+      <td>{{ tugas.id }}</td>
+      <td>{{ tugas.judul }}</td>
+      <td>{{ tugas.deskripsi }}</td>
+      <td>{{ tugas.deadline }}</td>
+      <td>
+        {% if tugas.sudah_lewat %}
+        <p></p>
+        {% else %}
+
+        <a href="{{ url('tugas_detail', kwargs={'id': tugas.id}) }}"
+          >Kirim</a
+        >
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

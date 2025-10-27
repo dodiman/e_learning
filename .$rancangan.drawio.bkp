@@ -1,0 +1,146 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5" pages="2">
+  <diagram name="Page-1" id="srr8621TPEEwwm0THrTZ">
+    <mxGraphModel dx="2638" dy="903" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="e_learning/&#xa;│&#xa;├── manage.py&#xa;├── requirements.txt&#xa;├── db.sqlite3&#xa;│&#xa;├── e_learning/                # Folder utama project (settings, urls, wsgi)&#xa;│   ├── __init__.py&#xa;│   ├── settings.py&#xa;│   ├── urls.py&#xa;│   ├── asgi.py&#xa;│   ├── wsgi.py&#xa;│&#xa;├── users/                     # Aplikasi untuk autentikasi &amp; profil pengguna&#xa;│   ├── models.py&#xa;│   ├── views.py&#xa;│   ├── forms.py&#xa;│   ├── urls.py&#xa;│   ├── templates/users/&#xa;│   └── admin.py&#xa;│&#xa;├── courses/                   # Aplikasi untuk manajemen kursus &amp; kelas&#xa;│   ├── models.py              # Model: Course, Class, Enrollment&#xa;│   ├── views.py&#xa;│   ├── urls.py&#xa;│   ├── templates/courses/&#xa;│   └── admin.py&#xa;│&#xa;├── materials/                 # Materi pembelajaran&#xa;│   ├── models.py              # Model: Material (file/video/link)&#xa;│   ├── views.py&#xa;│   ├── urls.py&#xa;│   ├── templates/materials/&#xa;│   └── admin.py&#xa;│&#xa;├── assignments/               # Tugas dan penilaian&#xa;│   ├── models.py              # Model: Assignment, Submission, Grade&#xa;│   ├── views.py&#xa;│   ├── urls.py&#xa;│   ├── templates/assignments/&#xa;│   └── admin.py&#xa;│&#xa;├── quizzes/                   # Kuis &amp; ujian online&#xa;│   ├── models.py              # Model: Quiz, Question, Choice, Result&#xa;│   ├── views.py&#xa;│   ├── urls.py&#xa;│   ├── templates/quizzes/&#xa;│   └── admin.py&#xa;│&#xa;├── announcements/             # Pengumuman kelas&#xa;│   ├── models.py&#xa;│   ├── views.py&#xa;│   ├── urls.py&#xa;│   ├── templates/announcements/&#xa;│   └── admin.py&#xa;│&#xa;├── discussions/               # Forum diskusi antar mahasiswa/dosen&#xa;│   ├── models.py&#xa;│   ├── views.py&#xa;│   ├── urls.py&#xa;│   ├── templates/discussions/&#xa;│   └── admin.py&#xa;│&#xa;└── static/                    # File statis (CSS, JS, gambar)&#xa;    └── ..." id="NQyZ78Svx9vPKTaCIy8g-1">
+          <mxCell style="text;whiteSpace=wrap;fontFamily=fira code;fontSize=10;" parent="1" vertex="1">
+            <mxGeometry x="-256.0033129882812" y="165" width="480" height="792" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="e_learning/&#xa;│&#xa;├── backend/&#xa;│   ├── manage.py&#xa;│   ├── db.sqlite3&#xa;│   ├── requirements.txt&#xa;│   ├── e_learning/&#xa;│   │   ├── settings.py&#xa;│   │   ├── urls.py&#xa;│   │   └── ...&#xa;│   │&#xa;│   ├── users/&#xa;│   ├── courses/&#xa;│   ├── materials/&#xa;│   ├── assignments/&#xa;│   ├── quizzes/&#xa;│   ├── announcements/&#xa;│   └── discussions/&#xa;│&#xa;├── frontend/&#xa;│   ├── package.json&#xa;│   ├── vite.config.js / next.config.js&#xa;│   ├── src/&#xa;│   │   ├── api/                  # File pemanggilan API&#xa;│   │   ├── components/           # Komponen UI (Navbar, Sidebar, dll)&#xa;│   │   ├── pages/                # Halaman utama (Home, Login, Dashboard)&#xa;│   │   ├── features/&#xa;│   │   │   ├── courses/          # Halaman &amp; komponen terkait kursus&#xa;│   │   │   ├── materials/&#xa;│   │   │   ├── assignments/&#xa;│   │   │   ├── quizzes/&#xa;│   │   │   └── announcements/&#xa;│   │   ├── hooks/&#xa;│   │   ├── context/&#xa;│   │   ├── styles/&#xa;│   │   └── App.jsx&#xa;│   └── public/&#xa;│&#xa;└── README.md" id="NQyZ78Svx9vPKTaCIy8g-2">
+          <mxCell style="text;whiteSpace=wrap;fontFamily=fira code;fontSize=10;" parent="1" vertex="1">
+            <mxGeometry x="281.9966870117188" y="165" width="462" height="480" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="No | Aktor     | Use Case                   | Deskripsi Singkat                                                   |&#xa;| -- | --------- | -------------------------- | ------------------------------------------------------------------- |&#xa;| 1  | Dosen     | Membuat Tugas              | Dosen menambahkan tugas baru dengan judul, deskripsi, dan deadline. |&#xa;| 2  | Dosen     | Melihat Daftar Pengumpulan | Melihat siapa saja mahasiswa yang sudah mengumpulkan.               |&#xa;| 3  | Dosen     | Menilai Tugas              | Memberi nilai dan komentar pada setiap pengumpulan.                 |&#xa;| 4  | Mahasiswa | Melihat Tugas              | Melihat daftar tugas yang diberikan.                                |&#xa;| 5  | Mahasiswa | Mengunggah Jawaban         | Mengirim file/jawaban untuk tugas tertentu.                         |&#xa;| 6  | Mahasiswa | Melihat Nilai &amp; Feedback   | Melihat nilai dari dosen setelah dinilai.                           |&#xa;| 7  | Sistem    | Memberi Notifikasi         | Mengirim notifikasi jika deadline mendekat atau nilai sudah keluar." id="NQyZ78Svx9vPKTaCIy8g-3">
+          <mxCell style="text;whiteSpace=wrap;fontFamily=fira code;fontSize=10;" parent="1" vertex="1">
+            <mxGeometry x="-347.0033129882812" y="-310" width="720" height="120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="kct_8UKzwdf1eZ-KiFiV-1" style="edgeStyle=entityRelationEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;endArrow=ERoneToMany;endFill=0;startArrow=ERone;startFill=0;jumpStyle=arc;" edge="1" parent="1" source="NQyZ78Svx9vPKTaCIy8g-5" target="kct_8UKzwdf1eZ-KiFiV-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-4" value="Matakuliah" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;swimlaneFillColor=default;fontFamily=fira code;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="-1415" y="-192" width="137" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-5" value="id" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=fira code;fontSize=10;" parent="NQyZ78Svx9vPKTaCIy8g-4" vertex="1">
+          <mxGeometry y="26" width="137" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-8" value="nama" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=fira code;fontSize=10;" parent="NQyZ78Svx9vPKTaCIy8g-4" vertex="1">
+          <mxGeometry y="52" width="137" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-9" value="deskripsi" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=fira code;fontSize=10;" parent="NQyZ78Svx9vPKTaCIy8g-4" vertex="1">
+          <mxGeometry y="78" width="137" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-6" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=fira code;fontSize=10;" parent="NQyZ78Svx9vPKTaCIy8g-4" vertex="1">
+          <mxGeometry y="104" width="137" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="kct_8UKzwdf1eZ-KiFiV-3" style="edgeStyle=entityRelationEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;labelBackgroundColor=default;startArrow=ERone;startFill=0;startSize=8;endArrow=ERone;endFill=0;endSize=8;jumpStyle=arc;" edge="1" parent="1" source="NQyZ78Svx9vPKTaCIy8g-24" target="NQyZ78Svx9vPKTaCIy8g-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kct_8UKzwdf1eZ-KiFiV-8" style="edgeStyle=entityRelationEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;labelBackgroundColor=default;startArrow=ERone;startFill=0;startSize=8;endArrow=ERoneToMany;endFill=0;endSize=8;jumpStyle=arc;" edge="1" parent="1" source="NQyZ78Svx9vPKTaCIy8g-11" target="kct_8UKzwdf1eZ-KiFiV-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-10" value="Tugas" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;swimlaneFillColor=default;fontFamily=fira code;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="-1212" y="-190" width="122" height="164" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-11" value="id" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=fira code;fontSize=10;" parent="NQyZ78Svx9vPKTaCIy8g-10" vertex="1">
+          <mxGeometry y="26" width="122" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kct_8UKzwdf1eZ-KiFiV-6" value="id_matakuliah" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=fira code;fontSize=10;" vertex="1" parent="NQyZ78Svx9vPKTaCIy8g-10">
+          <mxGeometry y="52" width="122" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-12" value="judul" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=fira code;fontSize=10;" parent="NQyZ78Svx9vPKTaCIy8g-10" vertex="1">
+          <mxGeometry y="78" width="122" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-13" value="deskripsi" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=fira code;fontSize=10;" parent="NQyZ78Svx9vPKTaCIy8g-10" vertex="1">
+          <mxGeometry y="104" width="122" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-15" value="deadline" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=fira code;fontSize=10;" parent="NQyZ78Svx9vPKTaCIy8g-10" vertex="1">
+          <mxGeometry y="130" width="122" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-14" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=fira code;fontSize=10;" parent="NQyZ78Svx9vPKTaCIy8g-10" vertex="1">
+          <mxGeometry y="156" width="122" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="kct_8UKzwdf1eZ-KiFiV-10" style="edgeStyle=entityRelationEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;labelBackgroundColor=default;startArrow=ERone;startFill=0;startSize=8;endArrow=ERoneToMany;endFill=0;endSize=8;jumpStyle=arc;" edge="1" parent="1" source="NQyZ78Svx9vPKTaCIy8g-17" target="kct_8UKzwdf1eZ-KiFiV-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-16" value="User" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;swimlaneFillColor=default;fontFamily=fira code;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="-766" y="24" width="128" height="138" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-17" value="id" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=fira code;fontSize=10;" parent="NQyZ78Svx9vPKTaCIy8g-16" vertex="1">
+          <mxGeometry y="26" width="128" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-18" value="usename" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=fira code;fontSize=10;" parent="NQyZ78Svx9vPKTaCIy8g-16" vertex="1">
+          <mxGeometry y="52" width="128" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-19" value="password" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=fira code;fontSize=10;" parent="NQyZ78Svx9vPKTaCIy8g-16" vertex="1">
+          <mxGeometry y="78" width="128" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-20" value="role" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=fira code;fontSize=10;" parent="NQyZ78Svx9vPKTaCIy8g-16" vertex="1">
+          <mxGeometry y="104" width="128" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-21" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=fira code;fontSize=10;" parent="NQyZ78Svx9vPKTaCIy8g-16" vertex="1">
+          <mxGeometry y="130" width="128" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-22" value="Data Model" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="-1415.003299458027" y="-265.49776082356766" width="100" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-23" value="Submission" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;swimlaneFillColor=default;fontFamily=fira code;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="-1013" y="-76" width="160" height="164" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-24" value="id" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=fira code;fontSize=10;" parent="NQyZ78Svx9vPKTaCIy8g-23" vertex="1">
+          <mxGeometry y="26" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kct_8UKzwdf1eZ-KiFiV-9" value="id_user" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=fira code;fontSize=10;" vertex="1" parent="NQyZ78Svx9vPKTaCIy8g-23">
+          <mxGeometry y="52" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kct_8UKzwdf1eZ-KiFiV-7" value="id_tugas" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=fira code;fontSize=10;" vertex="1" parent="NQyZ78Svx9vPKTaCIy8g-23">
+          <mxGeometry y="78" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-25" value="file" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=fira code;fontSize=10;" parent="NQyZ78Svx9vPKTaCIy8g-23" vertex="1">
+          <mxGeometry y="104" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-26" value="tanggal_kirim" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=fira code;fontSize=10;" parent="NQyZ78Svx9vPKTaCIy8g-23" vertex="1">
+          <mxGeometry y="130" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-28" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=fira code;fontSize=10;" parent="NQyZ78Svx9vPKTaCIy8g-23" vertex="1">
+          <mxGeometry y="156" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-29" value="Grade" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;swimlaneFillColor=default;fontFamily=fira code;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="-770" y="-174" width="160" height="138" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-30" value="id" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=fira code;fontSize=10;" parent="NQyZ78Svx9vPKTaCIy8g-29" vertex="1">
+          <mxGeometry y="26" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kct_8UKzwdf1eZ-KiFiV-11" value="id_submission" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=fira code;fontSize=10;" vertex="1" parent="NQyZ78Svx9vPKTaCIy8g-29">
+          <mxGeometry y="52" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-31" value="score" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=fira code;fontSize=10;" parent="NQyZ78Svx9vPKTaCIy8g-29" vertex="1">
+          <mxGeometry y="78" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-32" value="feedback" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=fira code;fontSize=10;" parent="NQyZ78Svx9vPKTaCIy8g-29" vertex="1">
+          <mxGeometry y="104" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NQyZ78Svx9vPKTaCIy8g-33" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=fira code;fontSize=10;" parent="NQyZ78Svx9vPKTaCIy8g-29" vertex="1">
+          <mxGeometry y="130" width="160" height="8" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="z1oGksk1WwiQBTIr72FP" name="Page-2">
+    <mxGraphModel dx="1254" dy="503" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="# app/models.py&#xa;from typing import Optional, List&#xa;from sqlmodel import SQLModel, Field, Relationship&#xa;&#xa;class Dosen(SQLModel, table=True):&#xa;    id: Optional[int] = Field(default=None, primary_key=True)&#xa;    nama: str&#xa;&#xa;    # Relasi ke Mahasiswa (satu dosen punya banyak mahasiswa)&#xa;    mahasiswa_list: List[&quot;Mahasiswa&quot;] = Relationship(back_populates=&quot;dosen&quot;)&#xa;&#xa;class Mahasiswa(SQLModel, table=True):&#xa;    id: Optional[int] = Field(default=None, primary_key=True)&#xa;    nama: str&#xa;    nim: str&#xa;&#xa;    # Foreign key ke tabel Dosen&#xa;    dosen_id: Optional[int] = Field(default=None, foreign_key=&quot;dosen.id&quot;)&#xa;&#xa;    # Relasi ke Dosen (setiap mahasiswa punya satu dosen)&#xa;    dosen: Optional[Dosen] = Relationship(back_populates=&quot;mahasiswa_list&quot;)" id="l-0VYgy9_bFIgWzBxU1W-1">
+          <mxCell style="text;whiteSpace=wrap;fontFamily=fira code;" vertex="1" parent="1">
+            <mxGeometry x="-46.33331298828125" y="139" width="565" height="314" as="geometry" />
+          </mxCell>
+        </UserObject>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

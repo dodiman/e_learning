@@ -1,0 +1,17 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+<a href="{{ url('matakuliah_detail', kwargs={'id': matakuliah.id}) }}">kembali</a>
+<h1>Kirim Tugas <span>{{ matakuliah.nama }}</span></h1>
+<form method="post">
+    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+    <input type="text" name="nim" id="nim" placeholder="nim">
+    <select name="tugas" id="tugas">
+        {% for tugas in list_tugas %}
+        <option value="{{ tugas.id }}">{{ tugas.judul }}</option>
+        {% endfor %}
+    </select>
+    <input type="url" name="link_tugas" id="link_tugas" placeholder="link tugas">
+    <button type="submit">Kirim</button>
+</form>
+{% for message in get_messages(request) %}<p> <strong>{{ message.tags }}</strong> {{ message }}</p>{% endfor %}
+{% endblock %}

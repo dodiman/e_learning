@@ -1,0 +1,54 @@
+{% macro card(title) %}
+<div class="card">
+    <div class="card-header">
+        {{ title }}
+    </div>
+    <div class="card-body">
+        {{ caller() }}
+    </div>
+</div>
+{% endmacro %}
+
+{% macro form(csrf_token, url_name) %}
+<form action="{{ url_name }}" method="post">
+    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+    {{ caller() }}
+    <button type="submit">Cari</button>
+</form>
+{% endmacro %}
+
+{% macro cardlist(page_obj, csrf_token, url_pencarian) %}
+<div class="cardlist">
+    <!-- kotak pencarian -->
+    {% call form(csrf_token, url_pencarian) %}
+        <input type="text" name="Cari" id="cari" placeholder="Cari...">
+    {% endcall %}
+    {% for item in page_obj %}
+    {% call card(item.judul) %}
+    <li>
+        <span>
+             {{ item.deskripsi }} {{ item.deadline }}
+        </span>
+        {% if not item.sudah_lewat %}
+        <a href="{{ url('tugas_detail', kwargs={'id': item.id}) }}">kirim</a>
+        {% endif %}
+    </li>
+    {% endcall %}
+    {% endfor %}
+
+    <!-- Navigasi halaman -->
+    <div class="pagination">
+        {% if page_obj.has_previous() %}
+            <a href="?page=1">&laquo; pertama</a>
+            <a href="?page={{ page_obj.previous_page_number() }}">sebelumnya</a>
+        {% endif %}
+
+        <span>Halaman {{ page_obj.number }} dari {{ page_obj.paginator.num_pages }}</span>
+
+        {% if page_obj.has_next() %}
+            <a href="?page={{ page_obj.next_page_number() }}">selanjutnya</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">terakhir &raquo;</a>
+        {% endif %}
+    </div>
+</div>
+{% endmacro %}
